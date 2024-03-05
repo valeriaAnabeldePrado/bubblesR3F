@@ -26,7 +26,7 @@ const Objetos = (props) => {
         <Buble
           position={[-190, 90, 10]}
           scale={100}
-          speed={2}
+          speed={4}
           stops={[0.3, 0.9]}
           rotation={[0, 0, 0]}
         />
@@ -34,7 +34,7 @@ const Objetos = (props) => {
         <Buble
           position={[250, 100, 10]}
           scale={150}
-          speed={1}
+          speed={3}
           stops={[0.3, 0.7]}
           rotation={[7, 0, 0]}
         />
@@ -42,7 +42,7 @@ const Objetos = (props) => {
         <Buble
           position={[50, -10, 0]}
           scale={40}
-          speed={2}
+          speed={3}
           stops={[0.4, 1]}
           rotation={[0, 0, 0]}
         />
@@ -50,7 +50,7 @@ const Objetos = (props) => {
         <Buble
           position={[190, -160, 10]}
           scale={100}
-          speed={2}
+          speed={4}
           stops={[0.2, 0.7]}
           rotation={[0, -8, 4]}
         />
@@ -65,7 +65,7 @@ const Objetos = (props) => {
         <Buble
           position={[-70, -80, 0]}
           scale={85}
-          speed={2}
+          speed={4}
           stops={[0.3, 0.6]}
           rotation={[0, 0, 0]}
         />

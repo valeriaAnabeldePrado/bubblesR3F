@@ -15,8 +15,31 @@
     rgba(61, 27, 139, 1) 100%
   );
 }
+
+.texto-cont {
+  padding: 10% 12%;
+  background-color: black;
+  display: none;
+}
+h1 {
+  text-align: center;
+  line-height: 120%;
+  color: rgb(255, 255, 255);
+  font-size: 7vw;
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  opacity: 0;
+}
 @media (width < 1200px) {
   .canvas-cont {
-    height: 80vh !important;
+    height: 50vh !important;
+  }
+  .texto-cont {
+    display: inline-block;
+    height: 100vh;
+  }
+  h1 {
+    opacity: 1;
   }
 }
