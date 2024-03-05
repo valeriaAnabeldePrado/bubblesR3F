@@ -13,7 +13,24 @@ import { useFrame } from "@react-three/fiber";
 const Buble = ({ position, scale, speed, stops, rotation }) => {
   const [hovered, setHovered] = useState(false);
   const refA = useRef(null);
+
+  const handlePointerEvents = () => {
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth > 1000) {
+      return {
+        onPointerOver: () => setHovered(true),
+        onPointerOut: () => setHovered(false),
+      };
+    } else {
+      return {
+        onClick: () => setHovered(!hovered),
+      };
+    }
+  };
+
   useCursor(hovered);
+
   useFrame(() => {
     refA.current.distort = THREE.MathUtils.lerp(
       refA.current.distort,
@@ -21,14 +38,23 @@ const Buble = ({ position, scale, speed, stops, rotation }) => {
       hovered ? 0.1 : 0.01
     );
   });
+  //useCursor(hovered);
+  // useFrame(() => {
+  //   refA.current.distort = THREE.MathUtils.lerp(
+  //     refA.current.distort,
+  //     hovered ? 0.7 : 0.2,
+  //     hovered ? 0.1 : 0.01
+  //   );
+  // });
   return (
     <>
       <mesh
         rotation={rotation}
         position={position}
         scale={scale}
-        onPointerOver={() => setHovered(true)}
-        onPointerOut={() => setHovered(false)}
+        {...handlePointerEvents()}
+        //onPointerOver={() => setHovered(true)}
+        //onPointerOut={() => setHovered(false)}
       >
         <sphereGeometry args={[1, 64, 64]} />
         <MeshDistortMaterial
